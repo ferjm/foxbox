@@ -66,8 +66,8 @@ var SetupUI = {
       }
       if (SetupUI.redirect) {
         var url = SetupUI.redirect;
-        url.search +=
-         (url.search.split('?')[1] ? '&':'?') + 'session_token=' + token;
+        url.search += (url.search.split('?')[1] ? '&':'?') + 'session_token=' +
+                      encodeURI(token);
         url.hash = window.location.hash;
         window.location.replace(url.toString());
       } else {
